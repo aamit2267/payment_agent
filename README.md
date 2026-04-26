@@ -129,3 +129,13 @@ Agent: Identity verified. Your outstanding balance is ₹1500. Please provide yo
 User: Card: 5500 0000 0000 0004, CVV: 456, Expiry: 09/27, Name: David Brown, Amount: 300
 Agent: Payment successful! Your transaction ID is txn_987654321. Have a great day!
 ```
+
+## Design Document
+
+For a deep dive into the technical architecture and engineering choices behind this project, please refer to the [DESIGN_DOC.md](DESIGN_DOC.md) file included in this repository. 
+
+This supplementary document outlines:
+* **Architecture Overview:** A breakdown of the 5-module separation of concerns (Orchestrator, LLM Service, Validators, API Client, and Configuration).
+* **Key Decisions & Rationale:** The reasoning behind restricting the LLM exclusively to natural language extraction and enforcing local pre-validation.
+* **Tradeoffs Accepted:** An analysis of choosing a deterministic, rule-based state machine over a fully autonomous LLM agent to guarantee security compliance.
+* **Future Improvements:** A technical roadmap for scaling the agent for a real-world production environment (e.g., Redis state management, asynchronous I/O).
